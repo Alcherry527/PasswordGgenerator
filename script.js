@@ -36,7 +36,7 @@ function generatePassword() {
         Numbers = window.confirm("Would You Like To Use Numbers In The Password");
     }
 
-    var characters = "abcde"
+    var characters = "abcdefghijklmnopqrstuvwxyz"
     var password = ""
     for (let i = 0; i < passwordLength; i++) {
         var randomindex = Math.floor(Math.random() * characters.length);
