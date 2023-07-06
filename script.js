@@ -1,5 +1,9 @@
 // Assignment code here
-
+var number = "0123456789"
+var lowercharacter = "abcdefghijklmnopqrstuvwxyz"
+var uppercharacter = "lowercharacter.toUpperCase()"
+var specialcharacter = "!@#$%^&*()"
+var candidates = ''
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -36,19 +40,28 @@ function generatePassword() {
         Numbers = window.confirm("Would You Like To Use Numbers In The Password");
     }
 
-    var characters = "abcdefghijklmnopqrstuvwxyz"
+    if (Uppercase) {
+        candidates += uppercharacter;
+    }
+
+    if (Lowercase) {
+        candidates += lowercharacter;
+    }
+
+    if (SpecialCharacters) {
+        candidates += specialcharacter;
+    }
+
+    if (Numbers) {
+        candidates += number;
+    }
+
     var password = ""
     for (let i = 0; i < passwordLength; i++) {
-        var randomindex = Math.floor(Math.random() * characters.length);
-        password = password + characters[randomindex];
+        var randomindex = Math.floor(Math.random() * candidates.length);
+        password = password + candidates[randomindex];
     }
 
     return password
-    // int randomNum = (int)(Math.random() * 101);  // 0 to 100
-};
 
-//where to put this because not returning
-//var password = ""
-//var characters = "abcde"
-// if
-//characters = characters + "123"
+};
